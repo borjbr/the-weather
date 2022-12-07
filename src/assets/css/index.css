@@ -14,3 +14,47 @@ header {
   text-align: center;
   font-size: 2.5rem;
 }
+
+
+/* Form  */
+
+
+form {
+  margin-bottom: 32px;
+  }
+
+/* Result  */
+
+.c-results {
+  background-color: #3C4F63;
+}
+
+.c-results-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  background: no-repeat url("/src/assets/img/bg-card.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.c-results-card img {
+  height: 80px;
+}
+
+.c-results-info {
+  padding: 24px;
+}
+
+.c-results-info p {
+  color: #D2E7FD;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.c-results-info h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}

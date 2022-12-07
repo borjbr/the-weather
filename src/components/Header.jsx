@@ -5,7 +5,7 @@ import React from 'react'
 
     <header>
       <div className='container'>
-        <h3 className='c-header-title mb-5 p-3'>The weather</h3>
+        <h1 className='c-header-title mb-5 p-3'>The weather</h1>
       </div>  
     </header>
   )

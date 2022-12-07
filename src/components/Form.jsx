@@ -22,6 +22,13 @@ const App = () => {
   const countryHandler = async e => e.currentTarget.value && setCities(await getCities(e.currentTarget.value));
   const cityHandler= async e => e.currentTarget.value && setWeather(await getCityWeather(e.currentTarget.value))
 
+  const today = new Date();
+  const day = today.getDay();
+  const month = today.getMonth() + 1;
+  const year = today.getFullYear();
+  const date =  day + '/' + month + '/' + year;
+
+
 
   return (
     <>
@@ -29,7 +36,7 @@ const App = () => {
       <form>
       <div className='form-group'>
         <label>Elige un pais</label>
-        <select className='form-control' onChange={countryHandler} name="">
+        <select className='form-control' onChange={countryHandler} name="pais">
           <option value="">Selecciona</option>
           {countries.map((country) =><option key={country.cca2} value={country.cca2}>{country.name.common}</option>)}
         </select>
@@ -37,23 +44,32 @@ const App = () => {
       {cities.length > 0 && (
         <div>
           <label>Elige una ciudad</label>
-          <select className='form-control' onChange={cityHandler}>
+          <select className='form-control' onChange={cityHandler} name="ciudad">
           <option value="">Selecciona</option>
             {cities.map((city) =><option key={city.id}>{city.name}</option>)}
           </select>
         </div>
       )}
       </form>
-      <div className='c-results'>
       {weather && (
-      <div>
-          <h2>Temperatura actual: {weather.main.temp}º</h2>
-          <p>Min: {weather.main.temp_min.toFixed()}°</p>
-          <p>Max: {weather.main.temp_max.toFixed()}°</p>
+      <><>
+      <div className='row no-gutters c-results'>
+        <div className='col-12 col-md-6 col-lg-4 c-results-card p-4'>
+          <h2 className='c-results-card__temp'>{(weather.main.temp).toFixed(1)}ºC</h2>
+          <p className='c-results-card__date'>{date}</p>
           <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="weather icon" />
+        </div>
+        <div className='col-12 col-md-6 col-lg-8 c-results-info p-4'>
+          <p>Temperatura máxima:</p><h3>{(weather.main.temp_max).toFixed(1)}ºC</h3> 
+          <p>Temperatura mínima:</p><h3>{(weather.main.temp_min).toFixed(1)}ºC</h3>
+          <p>Sensación térmica:</p><h3>{(weather.main.feels_like).toFixed(1)}ºC</h3>
+          <p>Humedad:</p><h3>{weather.main.humidity}%</h3>
+          <p>Velocidad del viento:</p><h3>{weather.wind.speed}m/s</h3>
+        </div>
       </div>
+      </></>
     )}
-      </div>
+
 
     </main>
     </>
