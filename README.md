@@ -29,7 +29,7 @@ Para aportarle un poco más de dificultad, se han empleado tres appis, que son l
 Rest Countries - Nos proporciona un listado de paises
 https://restcountries.com/
 
-RapidAppi Spot - Nos proporciona un listado de ciudades según el pais que nos haya traido el formulario
+RapidAppi Spot - Nos proporciona un listado de ciudades según el pais que nos haya traido el formulario. Actualmente se ha limitado a 15 ciudades.
 https://rapidapi.com/Spott/api/spott/
 
 
