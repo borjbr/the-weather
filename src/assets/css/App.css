@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+body {
+  background-color: #1E354C;
+}
+
+/* Header */
+
+.c-header-title {
+  display: block;
+  color: #fff;
+  text-align: center;
+}

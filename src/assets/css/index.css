@@ -1,0 +1,16 @@
+body {
+  background-color: #D2E7FD;
+}
+
+/* Header */
+
+header {
+  background-color: #3C4F63;
+}
+
+.c-header-title {
+  display: block;
+  color: #fff;
+  text-align: center;
+  font-size: 2.5rem;
+}
